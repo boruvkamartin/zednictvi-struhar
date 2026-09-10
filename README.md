@@ -27,4 +27,7 @@ Na web nepatří ilustrační fotografie vydávané za skutečné realizace.
 - `index.html` – obsah, metadata a strukturovaná data
 - `styles.css` – kompletní responzivní vzhled
 - `script.js` – mobilní menu, e-mailová poptávka a animace
+- `assets/images/` – optimalizované ilustrační fotografie ve formátu WebP
 - `.nojekyll` – vypnutí zpracování GitHub Pages přes Jekyll
+
+Ilustrační fotografie slouží pouze jako atmosférický doprovod. Sekce realizací zůstává připravená na skutečné fotografie zakázek Josefa Struhára.

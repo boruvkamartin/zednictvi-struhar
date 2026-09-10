@@ -265,6 +265,47 @@ a {
   gap: clamp(3rem, 6vw, 5.5rem);
 }
 
+.hero-visual {
+  position: relative;
+  margin: 0;
+  overflow: hidden;
+  border-radius: 18px 18px 18px 4px;
+  background: #ded8cf;
+  box-shadow: 0 20px 50px rgba(38, 42, 45, 0.14);
+}
+
+.hero-visual::before {
+  position: absolute;
+  inset: 14px;
+  z-index: 1;
+  border: 1px solid rgba(255, 255, 255, 0.55);
+  border-radius: 10px;
+  content: "";
+  pointer-events: none;
+}
+
+.hero-visual img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+}
+
+.hero-visual figcaption {
+  position: absolute;
+  right: 1.25rem;
+  bottom: 1.25rem;
+  z-index: 2;
+  padding: 0.35rem 0.55rem;
+  border-radius: 4px;
+  color: #4e5559;
+  background: rgba(255, 255, 255, 0.88);
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+}
+
 .eyebrow {
   margin: 0 0 1.25rem;
   color: var(--chalk-dark);
@@ -359,82 +400,6 @@ a {
   font-size: 0.78rem;
 }
 
-.craft-board {
-  position: relative;
-  padding: clamp(1.5rem, 3vw, 2.5rem);
-  color: var(--graphite);
-  border: 1px solid var(--concrete-light);
-  border-radius: var(--radius);
-  background-color: var(--paper);
-  box-shadow: var(--shadow);
-}
-
-.board-corner {
-  display: none;
-}
-
-.board-corner-top {
-  top: 12px;
-  right: 12px;
-  border-top: 3px solid var(--chalk);
-  border-right: 3px solid var(--chalk);
-}
-
-.board-corner-bottom {
-  bottom: 12px;
-  left: 12px;
-  border-bottom: 3px solid var(--chalk);
-  border-left: 3px solid var(--chalk);
-}
-
-.board-heading,
-.board-row {
-  display: flex;
-  justify-content: space-between;
-  gap: 1rem;
-}
-
-.board-heading {
-  margin-bottom: 1rem;
-  padding-bottom: 1rem;
-  border-bottom: 1px solid var(--chalk);
-  color: #687177;
-  font-size: 0.69rem;
-  font-weight: 800;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-}
-
-.board-scale {
-  color: #87919a;
-}
-
-.board-row {
-  align-items: baseline;
-  padding: 1.25rem 0;
-  border-bottom: 1px solid var(--concrete-light);
-}
-
-.board-row:last-of-type {
-  border-bottom: 0;
-}
-
-.board-row strong {
-  font-family: var(--display);
-  font-size: clamp(1.05rem, 1.7vw, 1.3rem);
-  font-weight: 700;
-  letter-spacing: -0.015em;
-  line-height: 1.2;
-}
-
-.board-row span {
-  max-width: 165px;
-  color: #687177;
-  font-size: 0.75rem;
-  line-height: 1.35;
-  text-align: right;
-}
-
 .fact-strip {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -492,6 +457,14 @@ a {
   font-size: 1.02rem;
 }
 
+.services {
+  background: #fbf7f2;
+}
+
+.services .section-heading {
+  margin-bottom: clamp(2rem, 4vw, 3.5rem);
+}
+
 .service-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -500,17 +473,37 @@ a {
 
 .service-card {
   position: relative;
-  min-height: 270px;
-  padding: clamp(1.5rem, 3vw, 2.5rem);
+  min-height: 0;
+  padding: 0;
   overflow: hidden;
   border: 1px solid var(--concrete-light);
   border-radius: var(--radius);
   background: var(--paper);
+  box-shadow: 0 10px 30px rgba(93, 76, 59, 0.06);
+  transition: transform 180ms ease, box-shadow 180ms ease;
+}
+
+.service-card:hover {
+  box-shadow: 0 16px 38px rgba(93, 76, 59, 0.1);
+  transform: translateY(-3px);
+}
+
+.service-image {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 3 / 2;
+  object-fit: cover;
+}
+
+.service-content {
+  min-height: 150px;
+  padding: 1.4rem 1.5rem 1.65rem;
 }
 
 .service-card h3 {
   max-width: 9ch;
-  margin: 3.5rem 0 0.8rem;
+  margin: 0 0 0.55rem;
   font-family: var(--display);
   font-size: clamp(1.45rem, 2.2vw, 2rem);
   font-weight: 700;
@@ -524,35 +517,11 @@ a {
   color: #62696d;
 }
 
-.service-symbol {
-  display: block;
-  height: 58px;
-  font-family: var(--display);
-  color: var(--chalk);
-  font-size: 2.3rem;
-  font-weight: 700;
-  line-height: 1;
-}
-
-.service-symbol.bricks,
-.service-symbol.tiles {
-  width: 72px;
-  background-image: linear-gradient(rgba(49, 95, 158, 0.55) 1px, transparent 1px), linear-gradient(90deg, rgba(49, 95, 158, 0.55) 1px, transparent 1px);
-  background-size: 24px 18px;
-}
-
-.service-symbol.tiles {
-  background-image: linear-gradient(rgba(49, 95, 158, 0.55) 1px, transparent 1px), linear-gradient(90deg, rgba(49, 95, 158, 0.55) 1px, transparent 1px);
-  background-size: 19px 19px;
-}
-
-.service-rule {
-  position: absolute;
-  width: 32px;
-  bottom: 2rem;
-  left: 2.5rem;
-  height: 2px;
-  background: var(--chalk);
+.image-disclaimer {
+  margin: 1rem 0 0;
+  color: #77736f;
+  font-size: 0.75rem;
+  text-align: right;
 }
 
 .projects {
@@ -956,7 +925,7 @@ a {
   }
 
   .service-card {
-    min-height: 240px;
+    min-height: 0;
   }
 }
 
@@ -1007,17 +976,8 @@ a {
     width: 100%;
   }
 
-  .craft-board {
-    margin-inline: 0;
-  }
-
-  .board-row {
-    display: grid;
-  }
-
-  .board-row span {
-    max-width: none;
-    text-align: left;
+  .hero-visual {
+    border-radius: 14px 14px 14px 3px;
   }
 
   .fact-strip {
