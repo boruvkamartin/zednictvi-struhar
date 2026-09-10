@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" role="img" aria-label="Josef Struhár">
+  <rect width="32" height="32" fill="#262a2d"/>
+  <text
+    x="16"
+    y="22"
+    text-anchor="middle"
+    fill="#f3f4f1"
+    font-family="Segoe UI, Aptos Display, Arial, sans-serif"
+    font-size="15"
+    font-weight="800"
+    letter-spacing="-0.6"
+  >JS</text>
+</svg>
